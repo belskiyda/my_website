@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My First Site</title>
+  <style>
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    img {
+      position: absolute;
+      left: 100%;
+      margin-left: 20px;
+      width: 300px;
+      height: auto;
+      opacity: 0;
+      transform: translateX(0) rotate(0deg) scale(0.8);
+      transition: all 0.8s ease;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    img.show {
+      opacity: 1;
+      transform: translateX(100px) rotate(720deg) scale(1);
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #ecf0f1;
+      position: relative;
+      font-family: sans-serif;
+    }
+
+    .runaway-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      background-color: #0315de;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: left 0.3s, top 0.3s;
+      white-space: nowrap;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Приветствую!</h1>
+  <h2>Это мой первый сайт!</h2>
+
+<div class="container">
+    <button id="btn">Показать фото</button>
+    <img id="photo" src="photo.jpg" alt="Фото с вращением" />
+  </div>
+
+  <script>
+    const btn = document.getElementById('btn');
+    const photo = document.getElementById('photo');
+
+    btn.addEventListener('click', () => {
+      photo.classList.toggle('show');
+    });
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #090117;
+    }
+    
+     h1 {
+      font-size: 50px;
+      color: #ffffff;
+      animation: blink-color 1s infinite;
+      font-family: sans-serif;
+    }
+
+    h2 {
+      font-size: 50px;
+      color: #ffffff;
+      animation: blink-color 1s infinite;
+      font-family: sans-serif;
+    }
+
+    @keyframes blink-color {
+      0%   { color: #ffffff; }
+      25%  { color: #e74c3c; }
+      50%  { color: #f1c40f; }
+      75%  { color: #3498db; }
+      100% { color: #ffffff; }
+    }
+
+    h1 {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: #343e5e;
+      font-family: sans-serif;
+    }
+    h2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      color: #34495e;
+      font-family: sans-serif;
+    }
+  </style>
+
+  <button class="runaway-btn">Регистрация</button>
+
+  <script>
+    const button = document.querySelector('.runaway-btn');
+
+    button.addEventListener('mouseenter', () => {
+      const padding = 20;
+      const maxX = window.innerWidth - button.offsetWidth - padding;
+      const maxY = window.innerHeight - button.offsetHeight - padding;
+
+      const randomX = Math.floor(Math.random() * maxX);
+      const randomY = Math.floor(Math.random() * maxY);
+
+      button.style.left = `${randomX}px`;
+      button.style.top = `${randomY}px`;
+    });
+  </script>
+
+</body>
+</html>
